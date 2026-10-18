@@ -1,0 +1,19 @@
+name: taha-product-catalog-api
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: product_catalog
+      POSTGRES_USER: catalog_app
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:${DB_PORT:-55432}:5432"
+    volumes:
+      - catalog-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U catalog_app -d product_catalog"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+volumes:
+  catalog-data:

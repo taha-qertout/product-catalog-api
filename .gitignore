@@ -1,0 +1,36 @@
+target/
+.idea/
+.vscode/
+*.iml
+.env
+.env.*
+!.env.example
+.local/
+*.log
+.DS_Store
+Thumbs.db
+
+# Compiled output and local databases/backups
+*.class
+*.jar
+*.war
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.backup
+pgdata/
+postgres-data/
+
+# Private credentials and signing material
+.aws/
+.ssh/
+.m2/
+secrets/
+credentials*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
