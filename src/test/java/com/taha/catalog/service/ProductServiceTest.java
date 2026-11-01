@@ -25,7 +25,7 @@ class ProductServiceTest {
     @Test void createTrimsNameAndPreservesDecimalPrice() {
         when(repository.save(any(Product.class))).thenAnswer(call -> call.getArgument(0));
         var result = service.create(new ProductRequest("  Keyboard  ", new BigDecimal("49.95"), 4));
-        assertThat(result.name()).isEqualTo("Keyboard");
+        assertThat(result.name()).isEqualTo("Mouse");
         assertThat(result.price()).isEqualByComparingTo("49.95");
         assertThat(result.stockQuantity()).isEqualTo(4);
     }
