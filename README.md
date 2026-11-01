@@ -94,3 +94,14 @@ See [recorded verification evidence](docs/verification.md) for the previously ex
 - Hibernate `ddl-auto=update` simplifies local setup but does not provide versioned schema migrations.
 - Listing is unpaginated; concurrent updates have no optimistic locking and use last-write-wins behavior.
 - Prices have no currency field; the catalog assumes a single currency.
+
+## Continuous Integration
+
+This project uses GitHub Actions to automatically check
+changes pushed to the main branch or submitted through pull requests.
+
+The pipeline performs:
+- Basic whitespace checks.
+- Unit and controller tests.
+- JAR packaging and PostgreSQL integration tests.
+- Simulated deployment on the main branch.
